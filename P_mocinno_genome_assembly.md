@@ -867,7 +867,7 @@ The figure illustrates the comparative karyotype alignment between *P. mocinno* 
 
 ---
 
-### 11.1 One-shot cluster script (build inputs → RBH → MCScanX → summary)
+### 11.1 Cluster script (build inputs → RBH → MCScanX → summary)
 
 Save as: `run_synteny_mcscanx.sh`
 
