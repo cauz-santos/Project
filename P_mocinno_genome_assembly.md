@@ -63,9 +63,9 @@ Because scaffolding was performed using a reference genome from a different spec
 
 ---
 
-### 3.1 Removal of the W chromosome from the reference genome
+### 3.1 Removal of the W chromosome from the reference genome (Guided by preliminar mapping)
 
-The *T. surrucura* reference genome includes a W chromosome. In birds, females are heterogametic (ZW) and males are homogametic (ZZ), and the presence, structure, and completeness of the W chromosome can vary substantially among species and assemblies. Moreover, the sex of the sequenced *Pharomachrus mocinno* individual was unknown (or potentially male), making the inclusion of a W chromosome in the reference problematic.
+The *T. surrucura* reference genome includes a W chromosome. Moreover, the sex of the sequenced *Pharomachrus mocinno* individual was unknown (or potentially male), making the inclusion of a W chromosome in the reference problematic, as only very short fragments mapped to this chromosome. This was verified during read alignment and coverage inspection, which indicated the absence of consistent and reliable mapping across the W chromosome. Therefore, the W chromosome was removed from downstream analyses.
 
 To avoid erroneous placement of autosomal or Z-linked contigs onto the W chromosome, and to prevent spurious scaffolding driven by repetitive or sex-specific sequences, the W chromosome was removed from the reference genome prior to scaffolding.
 
