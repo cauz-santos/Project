@@ -174,6 +174,46 @@ busco -i ragtag.scaffold.fasta \
 
 ---
 
+### 4.4 Genome assembly quality assessment 
+
+The snail plot was generated using **BlobToolKit v4.5.0** following the workflow below:
+
+#### Create a BlobToolKit dataset
+```bash
+blobtools create \
+  --fasta ragtag.scaffold.fasta \
+  Pharomachrus_mocinno_bt2
+```
+
+#### Add sequencing coverage
+Oxford Nanopore long reads were aligned to the assembly. The sorted and indexed BAM file was added to the dataset:
+
+```bash
+samtools index -c ../mapping/ont_vs_ragtag.bam
+
+blobtools add \
+  --cov ../mapping/ont_vs_ragtag.bam \
+  Pharomachrus_mocinno_bt2
+```
+
+#### Add BUSCO results
+```bash
+blobtools add \
+  --busco busco_ragtag/run_aves_odb10/full_table.bamnames.tsv \
+  Pharomachrus_mocinno_bt2
+```
+
+#### Generate the snail plot
+```bash
+blobtools view \
+  --view snail \
+  --plot \
+  --format svg \
+  Pharomachrus_mocinno_bt2
+```
+
+![Snail plot scaffolding](Figures/Pharomachrus_mocinno.snail.png)
+
 ## 5. Mapping-based validation of the scaffolded assembly
 
 To validate the structural correctness of the RagTag-scaffolded assembly, raw Oxford Nanopore reads were mapped back to the scaffolded genome. This analysis provides an independent assessment of global assembly accuracy and local validation of scaffold joins introduced during reference-guided scaffolding.
