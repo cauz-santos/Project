@@ -212,7 +212,7 @@ blobtools view \
   Pharomachrus_mocinno_bt2
 ```
 
-![Snail plot scaffolding](Figures/Pharomachrus_mocinno.snail.png)
+![Snail plot scaffolding](Figures/Pharomachrus_mocinno.snail.svg)
 
 ## 5. Mapping-based validation of the scaffolded assembly
 
